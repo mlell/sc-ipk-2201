@@ -8,3 +8,49 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Controlling Flow: if- / if-else-statement
+
+```
+if (condition) {
+  do_if_true()
+}
+```
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+}
+```
+
+this is how R (de)constructs the statement part in curly braces
+
+from "inside out"
+```{r}
+# innermost
+"x is greater than or equal to 10"
+# if we don't say what function to use, R will assume show()
+
+# we do have a function here that is applied to this value:
+print("x is greater than or equal to 10")
+
+# the outermost part of the statement are the curly brackets:
+{
+  print("x is greater than or equal to 10")
+}
+```
+
+
+now deconstruct the condition part analogously:
+```{r}
+x
+
+x >= 10
+```
+
+
+
+
+
