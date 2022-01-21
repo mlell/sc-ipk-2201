@@ -52,5 +52,22 @@ x >= 10
 
 
 
+if we want to execute some statements if the condition is *not* met:
+
+```{r}
+
+# reformulate the condition
+if (x < 10) {
+  print("x is not greater than or equal to 10")
+}
+
+# careful: does ! x >= 10 mean !(x >= 10) or (!x) >= 10
+if (!(x >= 10)) {
+  print("x is not greater than or equal to 10")
+}
+
+
+
+```
 
 
