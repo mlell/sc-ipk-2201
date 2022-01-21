@@ -1,0 +1,137 @@
+---
+title: "Lesson 1 - Introduction"
+output: html_document
+---
+
+Create new chunk with Ctrl + Alt + i
+
+```{r}
+1 + 100
+```
+
+
+More calculations
+
+```{r}
+2 /4
+```
+
+Parenthesis change the operator precedence
+
+```{r}
+(2 + 3) * 2 
+```
+
+
+Scientific notation
+
+```{r}
+3 * 10000000  # 3 * 10^7 = 3e07
+```
+
+# Mathematical functions
+
+```{r}
+sin(pi)
+```
+
+
+Logarithm
+
+```{r}
+log10(1000)
+```
+
+
+# Compare
+
+Are 2 things equal?
+```{r}
+2 == 4
+```
+
+Missing values
+
+```{r}
+ 2 == NA
+```
+
+Other comparison (Evaluate whole chunk with Ctrl + Shift + Return)
+
+```{r}
+3 > 2
+2 >= 2
+5 <= 7
+3 != 4
+
+
+```
+
+
+Combining TRUE and FALSE
+
+```{r}
+(3 < 5) & (1 != 2)
+```
+
+
+# Variables
+
+Give results a name
+
+```{r}
+addition_part   <- 2 + 3
+addition_part * 2
+```
+
+But using another factor gives another result
+
+```{r}
+addition_part * 3
+```
+
+
+What names can you use?
+
+Must not
+
+* Contain spaces
+* start with an underscore
+* have math operators
+* start with a number
+
+use Alt -  to insert <-
+
+
+```{r}
+min_height <- 2
+# _age <- 2  
+.mass <- 3 # hidden!
+MaxLength <- 3
+# min-length <- 3
+# 2widths <- 2
+celsius2kelvin <- 3
+```
+
+
+
+# Managing your environment
+
+delete variables
+
+Best way: => Delete environment and
+ Recompute everything!
+
+Haphazard way:
+
+```{r}
+rm(min_height)
+m <- MaxLength
+(m*2) - (m*1) / (m^2)
+rm(m)
+```
+
+
+
+
+
