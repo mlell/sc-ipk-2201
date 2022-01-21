@@ -1,0 +1,163 @@
+---
+title: "Lesson 06  - Subsetting data"
+output: html_document
+---
+
+# Subsetting data in vectors
+
+```{r}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+x
+```
+
+Single values: Use the bracket notation
+```{r}
+2
+x[2]
+```
+
+Use a vector (2) to subset another vector (x)
+
+Extend this to multiple values: 
+
+- Subset elements 1 and 3
+
+```{r}
+x[ c(1, 3) ]
+```
+
+- Subset the values 1 to 4
+
+```{r}
+1:4
+x[1:4]
+```
+
+Indices are error-prone and not well to imagine
+
+-> Use names
+
+```{r}
+#var = 2 # equals to var <- 2
+pizza_price <-
+  c(margherita = 4.50,
+    tonno = 5.60,
+    funghi = 5.20, 
+    capricciosa = 7.20)
+```
+
+Get Funghi price: Use "character" index instead of a
+numeric index -> less room for error!
+
+```{r}
+pizza_price["funghi"]
+```
+
+## Omitting values
+
+All values except the second:
+
+```{r}
+x
+x[-2]
+```
+
+
+Challenge:
+
+Combine:
+
+Omit from x the 3rd to the 5th value
+
+(Remember: " 3 to 5" == 3:5)
+```{r}
+-(3:5) # change the operator precedence!
+x [  -(3:5)  ]
+```
+
+Remove and save
+
+```{r}
+x <- x[-2]
+x
+```
+
+# Subset by logical
+
+
+Create a logical vector
+
+```{r}
+logi <- c(T, F, F, T, F) # omit this in scripts (F <- 3 ?!)
+logi <- c(TRUE, TRUE, FALSE, TRUE, FALSE) #< this is the way
+
+```
+
+Subset with it
+
+```{r}
+x
+x[logi] # logical too long
+x[c(TRUE, FALSE)] # logical too short -> recycles (T, F, T, F)
+x[c(TRUE, TRUE, FALSE, FALSE)]
+```
+
+How to generate logical vectors?
+
+```{r}
+x < 5
+```
+
+-> I can filter! FOr example: Filter out element of
+x that are smaller than 5
+
+```{r}
+x[ x < 5 ]
+```
+
+# More complex filtering: Combine multiple logical statements:
+
+ * Condition 1 is TRUE AND condition 2 is TRUE:  ->  &
+ * Condition 1 is TRUE OR  condition 2 is TRUE:  ->  |
+ * Invert Condition 1:   !    (e.g.  !(3 > 4) -> TRUE     )
+Example: TRUE & TRUE   -> TRUE
+         TRUE & FALSE  -> FALSE
+         
+**Challenge: Filter elements from x that are smaller than 7
+    AND bigger than 5
+    
+```{r}
+x <- c()
+```
+    
+```{r}
+# TIP: Create the logical vector first by combining
+# questions about x (e.g. x > 5)
+sel <- ( x < 3 ) | ( x > 4 )
+x[sel]
+# expected result: 5.4
+```
+Bonus question1: Achieve the same thing with | 
+
+```{r}
+x[ ( ... )  | ( .... ) ]
+```
+
+Bonus question2:  Achieve the same thing with | and & and
+  WITHOUT flipping < and >
+  
+```{r}
+x[  ...( x > 5 ) | ...(x < 7)  ]
+```
+
+
+```{r}
+
+```
+
+
+
+
+
+
+
