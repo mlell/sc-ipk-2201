@@ -90,6 +90,35 @@ if (x) {
 }
 ```
 
+## x being a vector (with multiple elements) in the condition
 
+```{r}
+x <- 1 : 10
 
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else {
+  print("x is less than 10")
+}
+
+```
+
+3 ways of what may need to be done
+
+1. to run the conditional statement on each of the vector elements
+2. to execute the `TRUE` branch if *all* elements of the logical vector are `TRUE`
+3. to execute the `TRUE` branch if *any* elements of the logical vector is `TRUE`
+
+```{r}
+any(x >= 10)
+all(x >= 10)
+```
+
+```{r}
+if (any (x >= 10)) {
+  print("some value(s) in x is/are greater than or equal to 10")
+} else {
+  print("all values in x are less than 10")
+}
+```
 
