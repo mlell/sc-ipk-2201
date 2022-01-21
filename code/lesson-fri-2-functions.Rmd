@@ -8,3 +8,64 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r}
+#' square function
+#' 
+#' This function takes a parameter x and squares it.
+#'
+#' @param x numeric, to be squared
+#' @param print logical, says whether to make additional printout of the square
+#'
+#' @return numeric, the square of x
+#'
+#' @examples
+#' square(3)
+#' square(10 : 20)
+square <- function(x, print = TRUE) {
+  x <- x^2
+  
+  if (print) {
+    cat("The square of x is", x, "\n")
+  }
+  
+  ## you can also explain what parts of your function do:
+  return(x)
+}
+
+square(2)
+```
+
+```{r}
+x <- 1 : 10
+
+sqrt(square(-3))
+
+absolute_value <- function(x) {
+  x <- square(x, print = FALSE)
+  x <- sqrt(x)
+  
+  return(x)
+}
+
+absolute_value(-3)
+
+x
+
+y <- -1 : 3
+absolute_value(y) # call by value (as opposed to call-by-reference)
+y
+
+```
+
+
+compare: the x inside `absolute_value()` is -3 in our call, even though in the global workspace x is a vector of numbers from 1 to 10.
+
+## Possibilities
+
+- use `source()` to source out function definitions into .R script files
+- functions are just a particular type of variables
+- and can be handed over as parameter to other functions
+  `f(s)` -> `use_on_all_vector_elements(vector, f)` doing f(vector[i]) along the whole vector.
+  That is the `*apply` family of functions.
+
