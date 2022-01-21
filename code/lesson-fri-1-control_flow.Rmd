@@ -79,3 +79,17 @@ if (x >= 10) {
 
 ```
 
+Pitfall: variables can store logical values, which are then evaluated as condition
+
+```{r}
+x  <-  4 == 3
+if (x) {
+  "4 equals 3"
+} else {
+  "4 does not equal 3"
+}
+```
+
+
+
+
