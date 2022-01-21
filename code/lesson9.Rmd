@@ -1,0 +1,57 @@
+---
+title: "Lesson 09 - ggplot2"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+# DO not include this in your analysis script
+# install.packages("ggplot2")
+
+```
+
+# Look at our data
+
+```{r}
+gapminder <- read.csv("data/gapminder_data.csv")
+str(gapminder)
+```
+
+* Each column: 1 variable
+* Each row: 1 observation
+
+```{r}
+gapminder
+```
+
+Create a first plot
+
+```{r}
+ggplot(gapminder) + aes( x = lifeExp   , y = gdpPercap )  +
+  geom_point()
+```
+
+Task:
+
+- How does life exp change with year (year -> x , y -> lifeExp)
+
+```{r}
+ggplot(gapminder) + aes(x = year, y = lifeExp) + 
+  geom_point()
+```
+
+Setting literal values: not in aes(), but in the geom_ -function itself!
+
+```{r}
+ggplot(gapminder) + aes(x = year, y = lifeExp, color = continent) + 
+  geom_point()
+```
+
+
+Document your packages at the end:
+
+```{r}
+sessionInfo()
+```
+ 
+ 
