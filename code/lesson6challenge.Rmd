@@ -1,0 +1,66 @@
+---
+title: "Logical exercise"
+output: html_document
+---
+
+
+
+```{r}
+x <- c(1,2,3,4,5,6,7,8)
+```
+
+
+
+Your toolbox:
+
+```
+  a & b        -> a  AND  b  must be TRUE
+  a | b        -> a   OR  B  must be TRUE
+  
+  !a , !(...)  -> The INVERSE: * if a is TRUE, !a is FALSE
+                               * if the stuff inside (...) is
+                                  TRUE,  !(...) is FALSE
+                                  
+  (...)        -> group together
+  
+  n1 < n2      -> TRUE if number n1 smaller than n2
+  n1 > n2      ->  ... n1 bigger than n2
+```
+
+--> Replace the __ by the correct parts from the tool box!
+
+
+**TASK 1** Obtain values smaller than 4! (fill in the __ from the toolbox)
+
+-> Correct output: 
+
+    1 2 3
+
+```{r}
+x[  x __ 4  ]
+```
+
+```{r}
+x[ __(x >= 4)]
+```
+
+
+**TASK 2** Find all the values that are bigger than 6 OR smaller than 3!
+  So you did it correctly if the output is:
+
+-> Correct output: 
+
+   1 2 7 8   
+
+
+```{r}
+x[   (x < 3)  __  (x > 6) ]
+
+
+x[   !(x > 2) __ !(x < 7) ]
+
+
+x[   __ __ (x > 2)  &  (x < 7) __ ]
+
+```
+
